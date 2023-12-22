@@ -1,8 +1,1 @@
-pyyaml
-psycopg2-binary
-boto3
-pandas
-pyarrow
-minio
-dbt-trino
-dbt-postgres
+apache-flink
