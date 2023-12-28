@@ -35,6 +35,19 @@ Este script em Python gera transações de vendas aleatórias usando a bibliotec
 
 Este script em Python utiliza o Apache Flink para consumir transações financeiras do tópico Kafka `financial_transactions`, processa cada transação (neste caso, simplesmente adicionando um prefixo "Processado:") e publica os resultados no tópico Kafka `processed_transactions`.
 
+## Diagrama de Sequência: Processamento de Streaming com Kafka e Flink
+
+```mermaid
+sequenceDiagram
+    participant DataGenerator
+    participant KafkaBroker
+    participant FlinkProcessor
+
+    DataGenerator->>KafkaBroker: Gera transação e publica em 'financial_transactions'
+    KafkaBroker->>FlinkProcessor: Consumir transações de 'financial_transactions'
+    FlinkProcessor->>KafkaBroker: Processar transações e publicar em 'processed_transactions'
+```
+
 ## Observações
 
 - Certifique-se de configurar um servidor Kafka em `localhost:9092` antes de executar os scripts.
