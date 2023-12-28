@@ -1,1 +1,7 @@
+numpy==1.16.5
+pandas==1.0.0
+pyflink-connector-kafka==1.14.0
 apache-flink
+pyflink
+confluent-kafka
+psycopg2-binary
